@@ -4,231 +4,399 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV - Kokou Ingrid Guenoukpati</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --green-dark:  #0a5c3e;
+            --green-mid:   #0f7a52;
+            --green-light: #14a86e;
+            --green-pale:  #e8f5ef;
+            --green-border:#b2ddc8;
+            --teal-accent: #0d9488;
+            --white:       #ffffff;
+            --off-white:   #f4fbf7;
+            --text-dark:   #0d1f16;
+            --text-mid:    #2d5241;
+            --text-muted:  #5a7a6a;
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'DM Sans', sans-serif; background: #d5d5d5; color: #222; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #c8ddd4;
+            color: var(--text-dark);
+        }
 
         .page {
             max-width: 860px;
             margin: 30px auto;
-            background: #fff;
-            box-shadow: 0 6px 40px rgba(0,0,0,0.18);
+            background: var(--white);
+            box-shadow: 0 8px 48px rgba(10,92,62,0.18);
             display: flex;
             flex-direction: column;
-            min-height: 1100px;
         }
 
-        /* TOP HEADER BAR */
+        /* ══ HEADER ══ */
         .header {
-            background: #7b1d3a;
-            padding: 30px 40px;
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
+            background: var(--green-dark);
+            padding: 36px 44px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
         }
 
-        .header-left .name {
+        /* decorative circles */
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -60px; right: -60px;
+            width: 180px; height: 180px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.05);
+        }
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -40px; left: -40px;
+            width: 120px; height: 120px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.04);
+        }
+
+        .header-top-bar {
+            width: 50px;
+            height: 3px;
+            background: var(--green-light);
+            margin: 0 auto 18px;
+            border-radius: 2px;
+        }
+
+        .header-name {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 40px;
+            font-size: 42px;
             font-weight: 700;
-            color: #fff;
-            letter-spacing: 1px;
-            line-height: 1;
-        }
-
-        .header-left .name span { color: #f5c6d0; }
-
-        .header-left .job-title {
-            font-size: 11px;
             letter-spacing: 3px;
+            color: var(--white);
             text-transform: uppercase;
-            color: rgba(255,255,255,0.7);
-            margin-top: 6px;
+            line-height: 1;
+            position: relative; z-index: 1;
         }
 
-        .header-right {
-            text-align: right;
+        .header-name span { color: #7ee8b8; }
+
+        .header-title {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 4.5px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.6);
+            margin-top: 10px;
+            position: relative; z-index: 1;
         }
 
-        .header-right p {
-            font-size: 11.5px;
-            color: rgba(255,255,255,0.85);
-            line-height: 1.7;
+        .header-bottom-bar {
+            width: 40px;
+            height: 2px;
+            background: rgba(126,232,184,0.4);
+            margin: 14px auto 0;
+            border-radius: 2px;
         }
 
-        /* BODY */
+        /* ══ BODY ══ */
         .body {
             display: flex;
             flex: 1;
+            min-height: 960px;
         }
 
-        /* SIDEBAR */
+        /* ══ SIDEBAR ══ */
         .sidebar {
-            width: 220px;
+            width: 215px;
             flex-shrink: 0;
-            background: #f8f2f4;
-            border-right: 3px solid #7b1d3a;
-            padding: 28px 20px;
+            background: var(--off-white);
+            border-right: 2px solid var(--green-border);
+            padding: 30px 22px;
         }
+
+        .sidebar-section { margin-bottom: 28px; }
 
         .sidebar-heading {
-            font-size: 9px;
+            font-size: 9.5px;
             font-weight: 700;
             letter-spacing: 2.5px;
             text-transform: uppercase;
-            color: #7b1d3a;
-            margin-bottom: 10px;
-            margin-top: 22px;
+            color: var(--green-dark);
+            margin-bottom: 12px;
+            padding-bottom: 7px;
+            border-bottom: 1.5px solid var(--green-border);
+            display: flex;
+            align-items: center;
+            gap: 7px;
         }
 
-        .sidebar-heading:first-child { margin-top: 0; }
+        .sidebar-heading .icon { font-size: 13px; }
 
-        .sidebar p, .sidebar li {
-            font-size: 11px;
+        .sidebar p {
+            font-size: 11.5px;
             line-height: 1.65;
-            color: #444;
-            list-style: none;
+            color: var(--text-mid);
         }
 
-        .edu-school { font-weight: 700; color: #1a1a1a !important; font-size: 11.5px !important; margin-top: 8px; }
-        .edu-year { color: #7b1d3a !important; font-weight: 600; font-size: 10.5px !important; }
-
-        .skill-bar-wrap { margin-bottom: 7px; }
-        .skill-label { font-size: 10.5px; color: #333; margin-bottom: 2px; }
-        .skill-bar { height: 4px; background: #e0ccd2; border-radius: 2px; }
-        .skill-bar-fill { height: 4px; background: #7b1d3a; border-radius: 2px; }
-
-        /* MAIN */
-        .main {
-            flex: 1;
-            padding: 30px 32px;
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            margin-bottom: 6px;
+        }
+        .contact-icon {
+            font-size: 12px;
+            margin-top: 1px;
+            flex-shrink: 0;
+        }
+        .contact-text {
+            font-size: 11.5px;
+            color: var(--text-mid);
+            line-height: 1.4;
         }
 
-        .main-heading {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 18px;
+        .edu-block { margin-bottom: 14px; }
+        .edu-school {
             font-weight: 700;
-            color: #7b1d3a;
-            margin-bottom: 10px;
-            padding-bottom: 4px;
-            border-bottom: 1px solid #e0ccd2;
+            font-size: 11.5px;
+            color: var(--text-dark);
+        }
+        .edu-degree {
+            font-size: 11px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+        .edu-year {
+            display: inline-block;
+            font-size: 9.5px;
+            font-weight: 700;
+            color: var(--white);
+            background: var(--green-mid);
+            padding: 1px 8px;
+            border-radius: 2px;
+            margin-top: 3px;
             letter-spacing: 0.5px;
         }
 
-        .main-section { margin-bottom: 24px; }
+        .skill-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 7px;
+        }
+        .skill-dot {
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: var(--green-light);
+            flex-shrink: 0;
+            box-shadow: 0 0 0 2px rgba(20,168,110,0.2);
+        }
+        .skill-text { font-size: 11.5px; color: var(--text-mid); }
 
-        .objective-text { font-size: 12px; line-height: 1.7; color: #444; }
+        /* ══ MAIN ══ */
+        .main {
+            flex: 1;
+            padding: 30px 36px;
+        }
 
-        .job-block { margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #f0e8eb; }
+        .main-section { margin-bottom: 26px; }
+
+        .main-heading {
+            font-size: 9.5px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--green-dark);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .main-heading::after {
+            content: '';
+            flex: 1;
+            height: 1.5px;
+            background: linear-gradient(to right, var(--green-border), transparent);
+        }
+
+        .objective-text {
+            font-size: 12px;
+            line-height: 1.8;
+            color: #3a5a4a;
+            background: var(--green-pale);
+            border-left: 3px solid var(--green-light);
+            padding: 13px 16px;
+            border-radius: 0 6px 6px 0;
+        }
+
+        /* Job blocks */
+        .job-block {
+            padding: 14px 0;
+            border-bottom: 1px solid var(--green-pale);
+        }
         .job-block:last-child { border-bottom: none; }
 
-        .job-title { font-size: 13px; font-weight: 700; color: #1a1a1a; }
-        .job-company { font-size: 11.5px; color: #7b1d3a; font-weight: 500; margin-top: 1px; }
-        .job-meta { font-size: 10.5px; color: #888; margin: 3px 0 7px; font-style: italic; }
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 2px;
+        }
+
+        .job-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-dark);
+            flex: 1;
+        }
+
+        .job-date {
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--green-dark);
+            background: var(--green-pale);
+            border: 1px solid var(--green-border);
+            padding: 2px 9px;
+            border-radius: 100px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .job-company {
+            font-size: 11.5px;
+            color: var(--green-mid);
+            font-style: italic;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
 
         .job-bullets { list-style: none; padding: 0; }
         .job-bullets li {
             font-size: 11.5px;
-            line-height: 1.55;
-            color: #444;
-            padding-left: 13px;
+            line-height: 1.6;
+            color: #3a5040;
+            padding-left: 14px;
             position: relative;
             margin-bottom: 3px;
         }
         .job-bullets li::before {
-            content: "–";
-            color: #7b1d3a;
+            content: "▸";
+            color: var(--green-light);
             position: absolute;
             left: 0;
-            font-weight: 700;
+            font-size: 10px;
+            top: 2px;
         }
 
-        @media print { body { background: white; } .page { margin: 0; box-shadow: none; } }
+        /* cross / plus decorative watermark bottom right */
+        .page-watermark {
+            position: fixed;
+            bottom: 30px; right: 30px;
+            font-size: 80px;
+            color: rgba(20,168,110,0.05);
+            pointer-events: none;
+            user-select: none;
+            font-family: serif;
+        }
+
+        @media print {
+            body { background: white; }
+            .page { margin: 0; box-shadow: none; }
+            .page-watermark { display: none; }
+        }
     </style>
 </head>
 <body>
 <div class="page">
 
+    <!-- HEADER -->
     <div class="header">
-        <div class="header-left">
-            <div class="name">Kokou Ingrid <span>Guenoukpati</span></div>
-            <div class="job-title">Pharmacy Technician</div>
-        </div>
-        <div class="header-right">
-            <p>kguenoukpati@gmail.com</p>
-            <p>347-234-8864</p>
-        </div>
+        <div class="header-top-bar"></div>
+        <div class="header-name">Kokou Ingrid <span>Guenoukpati</span></div>
+        <div class="header-title">Pharmacy Technician</div>
+        <div class="header-bottom-bar"></div>
     </div>
 
+    <!-- BODY -->
     <div class="body">
+
+        <!-- SIDEBAR -->
         <div class="sidebar">
 
-            <div class="sidebar-heading">Education</div>
-
-            <p class="edu-school">NY Medical Career Training Center</p>
-            <p>Pharmacy Technician Class</p>
-            <p class="edu-year">2026</p>
-
-            <p class="edu-school">ISTM University</p>
-            <p>Lome, Togo</p>
-            <p>B.Sc. Marketing & Sales Mgmt</p>
-            <p class="edu-year">2022</p>
-
-            <p class="edu-school">IAEC University</p>
-            <p>Lome, Togo</p>
-            <p>A.S. Computer Science & Telecom</p>
-            <p class="edu-year">2009</p>
-
-            <div class="sidebar-heading">Skills</div>
-
-            <div class="skill-bar-wrap">
-                <div class="skill-label">Bilingual (EN/FR)</div>
-                <div class="skill-bar"><div class="skill-bar-fill" style="width:100%"></div></div>
-            </div>
-            <div class="skill-bar-wrap">
-                <div class="skill-label">Customer Relations</div>
-                <div class="skill-bar"><div class="skill-bar-fill" style="width:95%"></div></div>
-            </div>
-            <div class="skill-bar-wrap">
-                <div class="skill-label">Sales Strategies</div>
-                <div class="skill-bar"><div class="skill-bar-fill" style="width:92%"></div></div>
-            </div>
-            <div class="skill-bar-wrap">
-                <div class="skill-label">Inventory Control</div>
-                <div class="skill-bar"><div class="skill-bar-fill" style="width:88%"></div></div>
-            </div>
-            <div class="skill-bar-wrap">
-                <div class="skill-label">Math / Science</div>
-                <div class="skill-bar"><div class="skill-bar-fill" style="width:85%"></div></div>
-            </div>
-            <div class="skill-bar-wrap">
-                <div class="skill-label">Problem-solving</div>
-                <div class="skill-bar"><div class="skill-bar-fill" style="width:90%"></div></div>
+            <div class="sidebar-section">
+                <div class="sidebar-heading"><span class="icon">✉</span> Contact</div>
+                <div class="contact-item">
+                    <span class="contact-icon"></span>
+                    <span class="contact-text">kguenoukpati@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon"></span>
+                    <span class="contact-text">347-234-8864</span>
+                </div>
             </div>
 
-            <div class="sidebar-heading">Qualities</div>
-            <p>Detail-oriented</p>
-            <p>Self-motivated</p>
-            <p>Multi-tasking</p>
-            <p>Team Leader</p>
-            <p>Adaptable</p>
+            <div class="sidebar-section">
+                <div class="sidebar-heading"><span class="icon"></span> Education</div>
+
+                <div class="edu-block">
+                    <div class="edu-school">NY Medical Career Training Center</div>
+                    <div class="edu-degree">Pharmacy Technician Class</div>
+                    <div><span class="edu-year">2026</span></div>
+                </div>
+
+                <div class="edu-block">
+                    <div class="edu-school">ISTM University</div>
+                    <div class="edu-degree">B.Sc. Marketing & Sales Management · Lome, Togo</div>
+                    <div><span class="edu-year">2022</span></div>
+                </div>
+
+                <div class="edu-block">
+                    <div class="edu-school">IAEC University</div>
+                    <div class="edu-degree">A.S. Computer Science & Telecommunications · Lome, Togo</div>
+                    <div><span class="edu-year">2009</span></div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-heading"><span class="icon"></span> Skills</div>
+                <div class="skill-row"><div class="skill-dot"></div><span class="skill-text">Bilingual (English / French)</span></div>
+                <div class="skill-row"><div class="skill-dot"></div><span class="skill-text">Math / Science proficiency</span></div>
+                <div class="skill-row"><div class="skill-dot"></div><span class="skill-text">Sales Strategies</span></div>
+                <div class="skill-row"><div class="skill-dot"></div><span class="skill-text">Customer Relations</span></div>
+                <div class="skill-row"><div class="skill-dot"></div><span class="skill-text">Inventory Control</span></div>
+                <div class="skill-row"><div class="skill-dot"></div><span class="skill-text">Detail-oriented</span></div>
+                <div class="skill-row"><div class="skill-dot"></div><span class="skill-text">Problem-solving</span></div>
+                <div class="skill-row"><div class="skill-dot"></div><span class="skill-text">Self-motivated</span></div>
+                <div class="skill-row"><div class="skill-dot"></div><span class="skill-text">Multi-tasking</span></div>
+            </div>
 
         </div>
 
+        <!-- MAIN -->
         <div class="main">
+
             <div class="main-section">
                 <div class="main-heading">Career Objective</div>
-                <p class="objective-text">Customer-oriented, strategic-thinking sales professional with more than 8 years in the pharmacy field. Multi-tasking and self-motivated leader with experience in inventory control and projections. Exemplary research, technical and problem-solving skills. Detail-oriented and curious to embrace new concepts.</p>
+                <p class="objective-text">
+                    Customer-oriented, strategic-thinking sales professional with more than 8 years in the pharmacy field. Multi-tasking and self-motivated leader with experience in inventory control and projections. Exemplary research, technical and problem-solving skills. Detail-oriented and curious to embrace new concepts.
+                </p>
             </div>
 
             <div class="main-section">
                 <div class="main-heading">Work Experience</div>
 
                 <div class="job-block">
-                    <div class="job-title">Customer Service Associate / Pharmacy Technician Intern</div>
+                    <div class="job-header">
+                        <div class="job-title">Customer Service Associate / Pharmacy Technician Intern</div>
+                        <div class="job-date">Jun 2024 – Apr 2026</div>
+                    </div>
                     <div class="job-company">Walgreens</div>
-                    <div class="job-meta">June 2024 – April 2026</div>
                     <ul class="job-bullets">
                         <li>Provided customer service support in a fast-paced retail pharmacy environment.</li>
                         <li>Completed internship as a pharmacy technician, assisting with prescription processing and patient care.</li>
@@ -236,41 +404,48 @@
                 </div>
 
                 <div class="job-block">
-                    <div class="job-title">Pharmaceutical Sales Representative</div>
+                    <div class="job-header">
+                        <div class="job-title">Pharmaceutical Sales Representative</div>
+                        <div class="job-date">2016 – 2022</div>
+                    </div>
                     <div class="job-company">Synovie Promotion (Menarini Farmaceutica Internazionale) — Lome, Togo</div>
-                    <div class="job-meta">2016 – 2022</div>
                     <ul class="job-bullets">
                         <li>Prospected and promoted laboratory products across Togo.</li>
                         <li>Obtained orders to increase the laboratory's turnover.</li>
                         <li>Built loyalty with physicians and pharmacists.</li>
-                        <li>Identified new target markets and developed marketing and launch plans for products.</li>
+                        <li>Identified new target markets for existing products and developed marketing and launch plans.</li>
                     </ul>
                 </div>
 
                 <div class="job-block">
-                    <div class="job-title">Pharmaceutical Sales Representative</div>
+                    <div class="job-header">
+                        <div class="job-title">Pharmaceutical Sales Representative</div>
+                        <div class="job-date">2014 – 2015</div>
+                    </div>
                     <div class="job-company">Repro Pharma (Therabel Lucien Pharma & Mednext Pharma) — Togo</div>
-                    <div class="job-meta">2014 – 2015</div>
                     <ul class="job-bullets">
                         <li>Prospected and promoted laboratory products in Togo.</li>
                         <li>Obtained orders to increase the laboratory's turnover.</li>
                         <li>Built loyalty with physicians and pharmacists.</li>
-                        <li>Identified new target markets and developed marketing and launch plans for products.</li>
+                        <li>Identified new target markets for existing products and developed marketing and launch plans.</li>
                     </ul>
                 </div>
 
                 <div class="job-block">
-                    <div class="job-title">Retail Pharmacy Technician</div>
+                    <div class="job-header">
+                        <div class="job-title">Retail Pharmacy Technician</div>
+                        <div class="job-date">2011 – 2013</div>
+                    </div>
                     <div class="job-company">Pharmacie Source de Vie — Lome, Togo</div>
-                    <div class="job-meta">2011 – 2013</div>
                     <ul class="job-bullets">
                         <li>Assisted customers with prescription refills and inquiries.</li>
-                        <li>Managed daily pharmacy operations including stocking shelves, ordering supplies, and maintaining cleanliness standards.</li>
-                        <li>Greeted customers and provided assistance when needed.</li>
+                        <li>Managed daily operations within the pharmacy department including stocking shelves, ordering supplies, and maintaining cleanliness standards.</li>
+                        <li>Greeted customers as they entered the store and provided assistance when needed.</li>
                         <li>Served as team leader for the pharmacy staff.</li>
                         <li>Monitored drug stock levels and coordinated orders from wholesalers.</li>
                     </ul>
                 </div>
+
             </div>
         </div>
     </div>
