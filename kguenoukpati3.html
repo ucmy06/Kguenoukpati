@@ -1,242 +1,918 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Kokou Ingrid Guenoukpati</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Source Sans 3', sans-serif; background: #d0d0d0; color: #222; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kokou Ingrid Guenoukpati — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --teal:    #0f7b6c;
+  --teal-lt: #14a88f;
+  --gold:    #d4920a;
+  --gold-lt: #f5b731;
+  --coral:   #e05c3a;
+  --navy:    #0f2136;
+  --navy-lt: #1c3652;
+  --cream:   #fdf8f2;
+  --text:    #1e1e1e;
+  --muted:   #6b7280;
+  --border:  #e5e7eb;
+}
 
-        .page {
-            max-width: 860px;
-            margin: 30px auto;
-            background: #fff;
-            box-shadow: 0 6px 40px rgba(0,0,0,0.2);
-            display: flex;
-            min-height: 1100px;
-        }
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 
-        /* SIDEBAR */
-        .sidebar {
-            width: 240px;
-            flex-shrink: 0;
-            background: #1b2a3b;
-            color: #fff;
-            padding: 36px 22px;
-            display: flex;
-            flex-direction: column;
-        }
+html { scroll-behavior: smooth; }
 
-        .sidebar-name {
-            font-family: 'Playfair Display', serif;
-            font-size: 20px;
-            font-weight: 700;
-            color: #fff;
-            line-height: 1.3;
-            margin-bottom: 4px;
-        }
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  overflow-x: hidden;
+}
 
-        .sidebar-name span { color: #d4a843; }
+/* ─── NAVBAR ─── */
+nav {
+  position: fixed; top:0; left:0; right:0; z-index:100;
+  background: rgba(15,33,54,0.96);
+  backdrop-filter: blur(12px);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 48px;
+  height: 64px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
 
-        .sidebar-jobtitle {
-            font-size: 10px;
-            letter-spacing: 2.5px;
-            text-transform: uppercase;
-            color: #d4a843;
-            margin-bottom: 28px;
-            padding-bottom: 18px;
-            border-bottom: 1px solid rgba(212,168,67,0.3);
-        }
+.nav-logo {
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
 
-        .sidebar-heading {
-            font-size: 9.5px;
-            font-weight: 700;
-            letter-spacing: 2.5px;
-            text-transform: uppercase;
-            color: #d4a843;
-            margin-bottom: 10px;
-            margin-top: 22px;
-        }
+.nav-logo span { color: var(--gold-lt); }
 
-        .sidebar p, .sidebar li {
-            font-size: 11px;
-            line-height: 1.65;
-            color: #c8d4e0;
-            list-style: none;
-        }
+.nav-links { display:flex; gap:32px; list-style:none; }
+.nav-links a {
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  text-decoration: none;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--gold-lt); }
 
-        .sidebar p.edu-school {
-            font-weight: 700;
-            color: #fff;
-            font-size: 11.5px;
-            margin-top: 8px;
-        }
+/* ─── HERO ─── */
+.hero {
+  min-height: 100vh;
+  background: var(--navy);
+  display: flex; align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 100px 80px 80px;
+}
 
-        .sidebar p.edu-year {
-            color: #d4a843;
-            font-size: 10.5px;
-        }
+/* animated background blobs */
+.hero::before {
+  content:'';
+  position:absolute; top:-120px; right:-120px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(20,168,143,0.18) 0%, transparent 65%);
+  border-radius:50%;
+  animation: pulse 8s ease-in-out infinite;
+}
+.hero::after {
+  content:'';
+  position:absolute; bottom:-80px; left:30%;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(212,146,10,0.12) 0%, transparent 65%);
+  border-radius:50%;
+  animation: pulse 10s ease-in-out infinite reverse;
+}
 
-        .skill-pill {
-            display: inline-block;
-            background: rgba(212,168,67,0.15);
-            border: 1px solid rgba(212,168,67,0.3);
-            color: #e8d5a3;
-            font-size: 10px;
-            padding: 3px 8px;
-            border-radius: 2px;
-            margin: 2px 2px 2px 0;
-        }
+@keyframes pulse {
+  0%, 100% { transform: scale(1) translateY(0); }
+  50%       { transform: scale(1.08) translateY(-20px); }
+}
 
-        /* MAIN */
-        .main {
-            flex: 1;
-            padding: 36px 34px;
-        }
+.hero-inner {
+  position: relative; z-index:2;
+  max-width: 700px;
+  animation: fadeUp .9s ease both;
+}
 
-        .main-heading {
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 2.5px;
-            text-transform: uppercase;
-            color: #1b2a3b;
-            margin-bottom: 12px;
-            padding-bottom: 5px;
-            border-bottom: 2px solid #d4a843;
-        }
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(30px); }
+  to   { opacity:1; transform:translateY(0); }
+}
 
-        .main-section { margin-bottom: 26px; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(245,183,49,0.12);
+  border: 1px solid rgba(245,183,49,0.3);
+  border-radius: 100px;
+  padding: 6px 16px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold-lt);
+  margin-bottom: 28px;
+}
 
-        .objective-text {
-            font-size: 12px;
-            line-height: 1.7;
-            color: #444;
-        }
+.hero-badge::before {
+  content:'';
+  width:7px; height:7px;
+  border-radius:50%;
+  background: var(--gold-lt);
+  animation: blink 2s ease infinite;
+}
 
-        .job-block { margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #eee; }
-        .job-block:last-child { border-bottom: none; }
+@keyframes blink {
+  0%,100%{ opacity:1; } 50%{ opacity:0.3; }
+}
 
-        .job-title { font-size: 13px; font-weight: 700; color: #1b2a3b; }
-        .job-company { font-size: 11.5px; color: #555; margin-top: 1px; }
-        .job-meta { font-size: 10.5px; color: #d4a843; font-weight: 600; margin: 3px 0 7px; letter-spacing: 0.5px; }
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(42px, 6vw, 72px);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.05;
+  margin-bottom: 8px;
+}
 
-        .job-bullets { list-style: none; padding: 0; }
-        .job-bullets li {
-            font-size: 11.5px;
-            line-height: 1.55;
-            color: #444;
-            padding-left: 13px;
-            position: relative;
-            margin-bottom: 3px;
-        }
-        .job-bullets li::before {
-            content: "▸";
-            color: #d4a843;
-            position: absolute;
-            left: 0;
-            font-size: 10px;
-            top: 1px;
-        }
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold-lt);
+}
 
-        @media print { body { background: white; } .page { margin: 0; box-shadow: none; } }
-    </style>
+.hero-subtitle {
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 28px;
+  letter-spacing: 0.5px;
+}
+
+.hero-desc {
+  font-size: 14.5px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.72);
+  max-width: 560px;
+  margin-bottom: 40px;
+}
+
+.hero-cta-row { display:flex; gap:16px; flex-wrap:wrap; }
+
+.btn-primary {
+  display: inline-flex; align-items:center; gap:8px;
+  background: linear-gradient(135deg, var(--teal-lt), var(--teal));
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 13px 28px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: transform .2s, box-shadow .2s;
+  box-shadow: 0 4px 20px rgba(20,168,143,0.35);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(20,168,143,0.45); }
+
+.btn-outline {
+  display: inline-flex; align-items:center; gap:8px;
+  border: 1.5px solid rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.8);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 13px 28px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: border-color .2s, color .2s;
+}
+.btn-outline:hover { border-color: var(--gold-lt); color: var(--gold-lt); }
+
+.hero-stats {
+  position:absolute; right:80px; bottom:80px;
+  display:flex; gap:40px;
+  animation: fadeUp 1.1s .3s ease both;
+}
+
+.stat-item { text-align:center; }
+.stat-num {
+  font-family: 'Fraunces', serif;
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--gold-lt);
+  line-height:1;
+}
+.stat-label {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin-top: 4px;
+}
+
+/* ─── SECTIONS ─── */
+section { padding: 96px 80px; }
+
+.section-tag {
+  display: inline-flex; align-items:center; gap:8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 12px;
+}
+.section-tag::before {
+  content:'';
+  width:28px; height:2px;
+  background: var(--teal);
+}
+
+.section-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.1;
+  margin-bottom: 56px;
+}
+
+.section-title span { color: var(--teal); }
+
+/* ─── ABOUT ─── */
+.about { background: #fff; }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.about-text p {
+  font-size: 14px;
+  line-height: 1.85;
+  color: #4b5563;
+  margin-bottom: 16px;
+}
+
+.about-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.about-card {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px 20px;
+  transition: transform .2s, box-shadow .2s;
+}
+.about-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+
+.about-card-icon {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.about-card h4 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.about-card p {
+  font-size: 11.5px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 0 !important;
+}
+
+/* ─── EXPERIENCE ─── */
+.experience { background: var(--cream); }
+
+.timeline { position:relative; }
+
+.timeline::before {
+  content:'';
+  position:absolute; left:18px; top:0; bottom:0;
+  width:2px;
+  background: linear-gradient(to bottom, var(--teal), var(--gold), var(--coral));
+}
+
+.tl-item {
+  display:flex; gap:40px;
+  margin-bottom: 48px;
+  padding-left: 0;
+  animation: fadeUp .6s ease both;
+}
+
+.tl-dot {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display:flex; align-items:center; justify-content:center;
+  font-size: 16px;
+  position:relative; z-index:1;
+  margin-top: 4px;
+}
+
+.tl-dot.teal  { background: var(--teal);  box-shadow: 0 0 0 4px rgba(15,123,108,0.15); }
+.tl-dot.gold  { background: var(--gold);  box-shadow: 0 0 0 4px rgba(212,146,10,0.15); }
+.tl-dot.coral { background: var(--coral); box-shadow: 0 0 0 4px rgba(224,92,58,0.15); }
+
+.tl-content {
+  background: #fff;
+  border-radius: 14px;
+  padding: 24px 28px;
+  flex: 1;
+  border: 1px solid var(--border);
+  transition: box-shadow .2s;
+}
+.tl-content:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); }
+
+.tl-header { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:8px; margin-bottom: 6px; }
+
+.tl-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.tl-date {
+  font-size: 11px;
+  font-weight: 600;
+  color: #fff;
+  padding: 3px 12px;
+  border-radius: 100px;
+}
+
+.tl-date.teal  { background: var(--teal); }
+.tl-date.gold  { background: var(--gold); }
+.tl-date.coral { background: var(--coral); }
+
+.tl-company {
+  font-size: 12.5px;
+  color: var(--teal);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.tl-bullets { list-style:none; }
+.tl-bullets li {
+  font-size: 12.5px;
+  color: #4b5563;
+  line-height: 1.6;
+  padding-left: 16px;
+  position:relative;
+  margin-bottom: 5px;
+}
+.tl-bullets li::before {
+  content:'→';
+  position:absolute; left:0;
+  color: var(--teal-lt);
+  font-size: 11px;
+  top: 1px;
+}
+
+/* ─── SKILLS ─── */
+.skills-section { background: var(--navy); }
+
+.skills-section .section-title { color:#fff; }
+.skills-section .section-title span { color: var(--gold-lt); }
+.skills-section .section-tag { color: var(--gold-lt); }
+.skills-section .section-tag::before { background: var(--gold-lt); }
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.skill-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 28px 24px;
+  transition: background .2s, transform .2s;
+}
+.skill-card:hover { background: rgba(255,255,255,0.09); transform: translateY(-4px); }
+
+.skill-card-icon { font-size: 32px; margin-bottom: 14px; }
+
+.skill-card h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.skill-tags { display:flex; flex-wrap:wrap; gap:6px; }
+
+.skill-tag {
+  font-size: 10.5px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 100px;
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.75);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+/* ─── EDUCATION ─── */
+.education { background: #fff; }
+
+.edu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.edu-card {
+  border-radius: 16px;
+  padding: 32px 26px;
+  position: relative;
+  overflow: hidden;
+  transition: transform .2s, box-shadow .2s;
+}
+.edu-card:hover { transform: translateY(-6px); box-shadow: 0 20px 48px rgba(0,0,0,0.12); }
+
+.edu-card.c1 { background: linear-gradient(145deg, #0f2136, #1c3652); color:#fff; }
+.edu-card.c2 { background: linear-gradient(145deg, #0f7b6c, #0a5549); color:#fff; }
+.edu-card.c3 { background: linear-gradient(145deg, #d4920a, #b37a06); color:#fff; }
+
+.edu-card::after {
+  content:'';
+  position:absolute; right:-30px; bottom:-30px;
+  width:120px; height:120px;
+  border-radius:50%;
+  background: rgba(255,255,255,0.05);
+}
+
+.edu-year {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.65;
+  margin-bottom: 14px;
+}
+
+.edu-degree {
+  font-family: 'Fraunces', serif;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.edu-school {
+  font-size: 12px;
+  opacity: 0.8;
+  font-weight: 500;
+}
+
+.edu-location {
+  font-size: 11px;
+  opacity: 0.55;
+  margin-top: 4px;
+}
+
+/* ─── CONTACT ─── */
+.contact-section {
+  background: linear-gradient(135deg, var(--teal) 0%, var(--navy) 100%);
+  text-align: center;
+  padding: 96px 80px;
+}
+
+.contact-section .section-tag { justify-content:center; color: var(--gold-lt); }
+.contact-section .section-tag::before { background: var(--gold-lt); }
+
+.contact-section .section-title { color:#fff; margin-bottom: 16px; }
+.contact-section .section-title span { color: var(--gold-lt); }
+
+.contact-sub {
+  font-size: 15px;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 48px;
+  font-weight: 300;
+}
+
+.contact-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.contact-card {
+  display:flex; align-items:center; gap:14px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 12px;
+  padding: 18px 28px;
+  text-decoration: none;
+  transition: background .2s, transform .2s;
+}
+.contact-card:hover { background: rgba(255,255,255,0.18); transform: translateY(-3px); }
+
+.contact-card-icon {
+  font-size: 24px;
+}
+
+.contact-card-info { text-align:left; }
+.contact-card-label {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  font-weight: 600;
+}
+.contact-card-value {
+  font-size: 13.5px;
+  color: #fff;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--navy);
+  text-align:center;
+  padding: 24px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.3);
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+footer span { color: var(--gold-lt); }
+
+/* ─── SCROLL ANIMATIONS ─── */
+.reveal {
+  opacity:0;
+  transform: translateY(28px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.reveal.visible {
+  opacity:1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  nav { padding: 0 24px; }
+  .nav-links { display:none; }
+  section { padding: 72px 24px; }
+  .hero { padding: 100px 24px 200px; }
+  .hero-stats { right:24px; bottom:40px; gap:24px; }
+  .about-grid { grid-template-columns:1fr; }
+  .skills-grid { grid-template-columns:1fr 1fr; }
+  .edu-grid { grid-template-columns:1fr; }
+  .stat-num { font-size:28px; }
+}
+</style>
 </head>
 <body>
-<div class="page">
-    <div class="sidebar">
-        <div class="sidebar-name">Kokou Ingrid<br><span>Guenoukpati</span></div>
-        <div class="sidebar-jobtitle">Pharmacy Technician</div>
 
-        <div class="sidebar-heading">Contact</div>
-        <p>kguenoukpati@gmail.com</p>
-        <p>347-234-8864</p>
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">KI<span>G</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-        <div class="sidebar-heading">Education</div>
-        <p class="edu-school">New York Medical Career Training Center</p>
-        <p>Pharmacy Technician Class</p>
-        <p class="edu-year">2026</p>
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-badge">Available for opportunities</div>
+    <h1>Kokou Ingrid<br><em>Guenoukpati</em></h1>
+    <p class="hero-subtitle">Pharmacy Technician · Pharmaceutical Sales Professional</p>
+    <p class="hero-desc">
+      Bilingual (English/French) sales professional with 8+ years in the pharmacy field.
+      Strategic thinker, inventory specialist, and customer-relations expert
+      now bringing her expertise into clinical pharmacy settings in New York.
+    </p>
+    <div class="hero-cta-row">
+      <a href="#experience" class="btn-primary">View Experience ↓</a>
+      <a href="#contact" class="btn-outline">Contact Me</a>
+    </div>
+  </div>
 
-        <p class="edu-school">ISTM University</p>
-        <p>Lome, Togo</p>
-        <p>B.Sc. Marketing & Sales Management</p>
-        <p class="edu-year">2022</p>
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-num">8+</div>
+      <div class="stat-label">Years in Pharma</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">3</div>
+      <div class="stat-label">Degrees</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">2</div>
+      <div class="stat-label">Languages</div>
+    </div>
+  </div>
+</section>
 
-        <p class="edu-school">IAEC University</p>
-        <p>Lome, Togo</p>
-        <p>A.S. Computer Science & Telecommunications</p>
-        <p class="edu-year">2009</p>
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="section-tag">Who I Am</div>
+  <div class="section-title">A <span>passionate</span> professional<br>with a unique background</div>
 
-        <div class="sidebar-heading">Skills</div>
-        <span class="skill-pill">Bilingual EN/FR</span>
-        <span class="skill-pill">Math & Science</span>
-        <span class="skill-pill">Sales Strategies</span>
-        <span class="skill-pill">Customer Relations</span>
-        <span class="skill-pill">Inventory Control</span>
-        <span class="skill-pill">Problem-solving</span>
-        <span class="skill-pill">Detail-oriented</span>
-        <span class="skill-pill">Self-motivated</span>
-        <span class="skill-pill">Multi-tasking</span>
+  <div class="about-grid reveal">
+    <div class="about-text">
+      <p>
+        Customer-oriented and strategic-thinking, I bring more than 8 years of experience across retail pharmacy, pharmaceutical sales, and healthcare operations in both West Africa and the United States.
+      </p>
+      <p>
+        My career has spanned inventory management, physician and pharmacist relations, product promotion, and frontline patient assistance — giving me a 360° view of the pharmaceutical ecosystem.
+      </p>
+      <p>
+        Currently completing my Pharmacy Technician certification in New York, I am ready to channel this diverse experience into a high-impact role in the US healthcare market.
+      </p>
     </div>
 
-    <div class="main">
-        <div class="main-section">
-            <div class="main-heading">Career Objective</div>
-            <p class="objective-text">Customer-oriented, strategic-thinking sales professional with more than 8 years in the pharmacy field. Multi-tasking and self-motivated leader with experience in inventory control and projections. Exemplary research, technical and problem-solving skills. Detail-oriented and curious to embrace new concepts.</p>
-        </div>
-
-        <div class="main-section">
-            <div class="main-heading">Work Experience</div>
-
-            <div class="job-block">
-                <div class="job-title">Customer Service Associate / Pharmacy Technician Intern</div>
-                <div class="job-company">Walgreens</div>
-                <div class="job-meta">June 2024 – April 2026</div>
-                <ul class="job-bullets">
-                    <li>Provided customer service support in a fast-paced retail pharmacy environment.</li>
-                    <li>Completed internship as a pharmacy technician, assisting with prescription processing and patient care.</li>
-                </ul>
-            </div>
-
-            <div class="job-block">
-                <div class="job-title">Pharmaceutical Sales Representative</div>
-                <div class="job-company">Synovie Promotion (Menarini Farmaceutica Internazionale) — Lome, Togo</div>
-                <div class="job-meta">2016 – 2022</div>
-                <ul class="job-bullets">
-                    <li>Prospected and promoted laboratory products across Togo.</li>
-                    <li>Obtained orders to increase the laboratory's turnover.</li>
-                    <li>Built loyalty with physicians and pharmacists.</li>
-                    <li>Identified new target markets for existing products and developed marketing and launch plans.</li>
-                </ul>
-            </div>
-
-            <div class="job-block">
-                <div class="job-title">Pharmaceutical Sales Representative</div>
-                <div class="job-company">Repro Pharma (Therabel Lucien Pharma & Mednext Pharma) — Togo</div>
-                <div class="job-meta">2014 – 2015</div>
-                <ul class="job-bullets">
-                    <li>Prospected and promoted laboratory products in Togo.</li>
-                    <li>Obtained orders to increase the laboratory's turnover.</li>
-                    <li>Built loyalty with physicians and pharmacists.</li>
-                    <li>Identified new target markets for existing products and developed marketing and launch plans.</li>
-                </ul>
-            </div>
-
-            <div class="job-block">
-                <div class="job-title">Retail Pharmacy Technician</div>
-                <div class="job-company">Pharmacie Source de Vie — Lome, Togo</div>
-                <div class="job-meta">2011 – 2013</div>
-                <ul class="job-bullets">
-                    <li>Assisted customers with prescription refills and inquiries.</li>
-                    <li>Managed daily operations including stocking shelves, ordering supplies, and maintaining cleanliness standards.</li>
-                    <li>Greeted customers and provided assistance when needed.</li>
-                    <li>Served as team leader for the pharmacy staff.</li>
-                    <li>Monitored drug stock levels and coordinated orders from wholesalers.</li>
-                </ul>
-            </div>
-        </div>
+    <div class="about-cards">
+      <div class="about-card">
+        <div class="about-card-icon">💊</div>
+        <h4>Pharmacy Operations</h4>
+        <p>Prescription processing, inventory control, drug stock monitoring</p>
+      </div>
+      <div class="about-card">
+        <div class="about-card-icon">🤝</div>
+        <h4>Customer Relations</h4>
+        <p>Patient care, physician loyalty, pharmacist partnerships</p>
+      </div>
+      <div class="about-card">
+        <div class="about-card-icon">📈</div>
+        <h4>Sales Strategy</h4>
+        <p>Market development, product launch, territory management</p>
+      </div>
+      <div class="about-card">
+        <div class="about-card-icon">🌍</div>
+        <h4>Bilingual</h4>
+        <p>Fluent in English & French — valuable in multicultural settings</p>
+      </div>
     </div>
-</div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="experience" id="experience">
+  <div class="section-tag">Career Path</div>
+  <div class="section-title">Professional <span>Experience</span></div>
+
+  <div class="timeline">
+
+    <div class="tl-item reveal">
+      <div class="tl-dot teal">💼</div>
+      <div class="tl-content">
+        <div class="tl-header">
+          <div class="tl-title">Customer Service Associate / Pharmacy Technician Intern</div>
+          <div class="tl-date teal">Jun 2024 – Apr 2026</div>
+        </div>
+        <div class="tl-company">Walgreens — New York, USA</div>
+        <ul class="tl-bullets">
+          <li>Provided exceptional customer service support in a high-volume retail pharmacy environment.</li>
+          <li>Completed pharmacy technician internship, assisting with prescription processing and patient care.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-dot gold">🏥</div>
+      <div class="tl-content">
+        <div class="tl-header">
+          <div class="tl-title">Pharmaceutical Sales Representative</div>
+          <div class="tl-date gold">2016 – 2022</div>
+        </div>
+        <div class="tl-company">Synovie Promotion (Menarini Farmaceutica Internazionale) — Lome, Togo</div>
+        <ul class="tl-bullets">
+          <li>Prospected and promoted laboratory products across Togo.</li>
+          <li>Secured orders to consistently grow the laboratory's market turnover.</li>
+          <li>Built and sustained strong loyalty relationships with physicians and pharmacists.</li>
+          <li>Identified new target markets and developed marketing and product launch plans.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-dot coral">📊</div>
+      <div class="tl-content">
+        <div class="tl-header">
+          <div class="tl-title">Pharmaceutical Sales Representative</div>
+          <div class="tl-date coral">2014 – 2015</div>
+        </div>
+        <div class="tl-company">Repro Pharma (Therabel Lucien Pharma & Mednext Pharma) — Togo</div>
+        <ul class="tl-bullets">
+          <li>Prospected and promoted laboratory products throughout Togo.</li>
+          <li>Obtained orders to increase the laboratory's turnover.</li>
+          <li>Built strong loyalty with physicians and pharmacists.</li>
+          <li>Identified new target markets and developed marketing and launch strategies.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-dot teal">🏪</div>
+      <div class="tl-content">
+        <div class="tl-header">
+          <div class="tl-title">Retail Pharmacy Technician — Team Leader</div>
+          <div class="tl-date teal">2011 – 2013</div>
+        </div>
+        <div class="tl-company">Pharmacie Source de Vie — Lome, Togo</div>
+        <ul class="tl-bullets">
+          <li>Assisted customers with prescription refills and inquiries.</li>
+          <li>Managed daily operations: stocking shelves, ordering supplies, and maintaining cleanliness standards.</li>
+          <li>Greeted customers and provided personalized assistance when needed.</li>
+          <li>Led the pharmacy team as team leader.</li>
+          <li>Monitored drug stock levels and coordinated wholesale orders.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills-section" id="skills">
+  <div class="section-tag">What I Bring</div>
+  <div class="section-title">Core <span>Skills</span> &amp; Expertise</div>
+
+  <div class="skills-grid reveal">
+    <div class="skill-card">
+      <div class="skill-card-icon">💬</div>
+      <h3>Communication</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Bilingual EN/FR</span>
+        <span class="skill-tag">Customer Relations</span>
+        <span class="skill-tag">Physician Relations</span>
+        <span class="skill-tag">Team Leadership</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-card-icon">📦</div>
+      <h3>Pharmacy Operations</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Inventory Control</span>
+        <span class="skill-tag">Drug Stock Monitoring</span>
+        <span class="skill-tag">Prescription Processing</span>
+        <span class="skill-tag">Wholesale Orders</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-card-icon">📈</div>
+      <h3>Sales & Marketing</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Sales Strategies</span>
+        <span class="skill-tag">Market Development</span>
+        <span class="skill-tag">Product Launch</span>
+        <span class="skill-tag">Revenue Growth</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-card-icon">🧮</div>
+      <h3>Technical Aptitude</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Math Proficiency</span>
+        <span class="skill-tag">Science Knowledge</span>
+        <span class="skill-tag">Pharmacology</span>
+        <span class="skill-tag">Documentation</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-card-icon">🧠</div>
+      <h3>Soft Skills</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Detail-oriented</span>
+        <span class="skill-tag">Self-motivated</span>
+        <span class="skill-tag">Multi-tasking</span>
+        <span class="skill-tag">Critical Thinking</span>
+        <span class="skill-tag">Adaptable</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-card-icon">🌍</div>
+      <h3>Global Experience</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">West Africa Markets</span>
+        <span class="skill-tag">US Healthcare</span>
+        <span class="skill-tag">Cross-cultural Work</span>
+        <span class="skill-tag">International Sales</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="education" id="education">
+  <div class="section-tag">Academic Background</div>
+  <div class="section-title">My <span>Education</span></div>
+
+  <div class="edu-grid reveal">
+    <div class="edu-card c1">
+      <div class="edu-year">2026</div>
+      <div class="edu-degree">Pharmacy Technician Certification</div>
+      <div class="edu-school">New York Medical Career Training Center</div>
+      <div class="edu-location">New York, USA</div>
+    </div>
+
+    <div class="edu-card c2">
+      <div class="edu-year">2022</div>
+      <div class="edu-degree">Bachelor of Science — Marketing & Sales Management</div>
+      <div class="edu-school">ISTM University</div>
+      <div class="edu-location">Lome, Togo</div>
+    </div>
+
+    <div class="edu-card c3">
+      <div class="edu-year">2009</div>
+      <div class="edu-degree">Associate Diploma — Computer Science & Telecommunications</div>
+      <div class="edu-school">IAEC University</div>
+      <div class="edu-location">Lome, Togo</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="section-tag">Get In Touch</div>
+  <div class="section-title">Let's <span>Connect</span></div>
+  <p class="contact-sub">Open to pharmacy technician roles and pharmaceutical sales opportunities in New York.</p>
+
+  <div class="contact-cards">
+    <a href="mailto:kguenoukpati@gmail.com" class="contact-card">
+      <div class="contact-card-icon">✉️</div>
+      <div class="contact-card-info">
+        <div class="contact-card-label">Email</div>
+        <div class="contact-card-value">kguenoukpati@gmail.com</div>
+      </div>
+    </a>
+
+    <a href="tel:3472348864" class="contact-card">
+      <div class="contact-card-icon">📞</div>
+      <div class="contact-card-info">
+        <div class="contact-card-label">Phone</div>
+        <div class="contact-card-value">347-234-8864</div>
+      </div>
+    </a>
+
+    <div class="contact-card">
+      <div class="contact-card-icon">📍</div>
+      <div class="contact-card-info">
+        <div class="contact-card-label">Location</div>
+        <div class="contact-card-value">New York, USA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 <span>Kokou Ingrid Guenoukpati</span> · Pharmacy Technician · New York
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 100);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Smooth active nav highlight
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 80) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#'+current
+        ? 'var(--gold-lt)' : '';
+    });
+  });
+</script>
+
 </body>
 </html>
