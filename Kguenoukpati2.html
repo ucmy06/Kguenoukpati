@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Kokou Ingrid Guenoukpati</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'DM Sans', sans-serif; background: #d5d5d5; color: #222; }
+
+        .page {
+            max-width: 860px;
+            margin: 30px auto;
+            background: #fff;
+            box-shadow: 0 6px 40px rgba(0,0,0,0.18);
+            display: flex;
+            flex-direction: column;
+            min-height: 1100px;
+        }
+
+        /* TOP HEADER BAR */
+        .header {
+            background: #7b1d3a;
+            padding: 30px 40px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+
+        .header-left .name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 40px;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 1px;
+            line-height: 1;
+        }
+
+        .header-left .name span { color: #f5c6d0; }
+
+        .header-left .job-title {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.7);
+            margin-top: 6px;
+        }
+
+        .header-right {
+            text-align: right;
+        }
+
+        .header-right p {
+            font-size: 11.5px;
+            color: rgba(255,255,255,0.85);
+            line-height: 1.7;
+        }
+
+        /* BODY */
+        .body {
+            display: flex;
+            flex: 1;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            width: 220px;
+            flex-shrink: 0;
+            background: #f8f2f4;
+            border-right: 3px solid #7b1d3a;
+            padding: 28px 20px;
+        }
+
+        .sidebar-heading {
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: #7b1d3a;
+            margin-bottom: 10px;
+            margin-top: 22px;
+        }
+
+        .sidebar-heading:first-child { margin-top: 0; }
+
+        .sidebar p, .sidebar li {
+            font-size: 11px;
+            line-height: 1.65;
+            color: #444;
+            list-style: none;
+        }
+
+        .edu-school { font-weight: 700; color: #1a1a1a !important; font-size: 11.5px !important; margin-top: 8px; }
+        .edu-year { color: #7b1d3a !important; font-weight: 600; font-size: 10.5px !important; }
+
+        .skill-bar-wrap { margin-bottom: 7px; }
+        .skill-label { font-size: 10.5px; color: #333; margin-bottom: 2px; }
+        .skill-bar { height: 4px; background: #e0ccd2; border-radius: 2px; }
+        .skill-bar-fill { height: 4px; background: #7b1d3a; border-radius: 2px; }
+
+        /* MAIN */
+        .main {
+            flex: 1;
+            padding: 30px 32px;
+        }
+
+        .main-heading {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #7b1d3a;
+            margin-bottom: 10px;
+            padding-bottom: 4px;
+            border-bottom: 1px solid #e0ccd2;
+            letter-spacing: 0.5px;
+        }
+
+        .main-section { margin-bottom: 24px; }
+
+        .objective-text { font-size: 12px; line-height: 1.7; color: #444; }
+
+        .job-block { margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #f0e8eb; }
+        .job-block:last-child { border-bottom: none; }
+
+        .job-title { font-size: 13px; font-weight: 700; color: #1a1a1a; }
+        .job-company { font-size: 11.5px; color: #7b1d3a; font-weight: 500; margin-top: 1px; }
+        .job-meta { font-size: 10.5px; color: #888; margin: 3px 0 7px; font-style: italic; }
+
+        .job-bullets { list-style: none; padding: 0; }
+        .job-bullets li {
+            font-size: 11.5px;
+            line-height: 1.55;
+            color: #444;
+            padding-left: 13px;
+            position: relative;
+            margin-bottom: 3px;
+        }
+        .job-bullets li::before {
+            content: "–";
+            color: #7b1d3a;
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+        }
+
+        @media print { body { background: white; } .page { margin: 0; box-shadow: none; } }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <div class="header">
+        <div class="header-left">
+            <div class="name">Kokou Ingrid <span>Guenoukpati</span></div>
+            <div class="job-title">Pharmacy Technician</div>
+        </div>
+        <div class="header-right">
+            <p>kguenoukpati@gmail.com</p>
+            <p>347-234-8864</p>
+        </div>
+    </div>
+
+    <div class="body">
+        <div class="sidebar">
+
+            <div class="sidebar-heading">Education</div>
+
+            <p class="edu-school">NY Medical Career Training Center</p>
+            <p>Pharmacy Technician Class</p>
+            <p class="edu-year">2026</p>
+
+            <p class="edu-school">ISTM University</p>
+            <p>Lome, Togo</p>
+            <p>B.Sc. Marketing & Sales Mgmt</p>
+            <p class="edu-year">2022</p>
+
+            <p class="edu-school">IAEC University</p>
+            <p>Lome, Togo</p>
+            <p>A.S. Computer Science & Telecom</p>
+            <p class="edu-year">2009</p>
+
+            <div class="sidebar-heading">Skills</div>
+
+            <div class="skill-bar-wrap">
+                <div class="skill-label">Bilingual (EN/FR)</div>
+                <div class="skill-bar"><div class="skill-bar-fill" style="width:100%"></div></div>
+            </div>
+            <div class="skill-bar-wrap">
+                <div class="skill-label">Customer Relations</div>
+                <div class="skill-bar"><div class="skill-bar-fill" style="width:95%"></div></div>
+            </div>
+            <div class="skill-bar-wrap">
+                <div class="skill-label">Sales Strategies</div>
+                <div class="skill-bar"><div class="skill-bar-fill" style="width:92%"></div></div>
+            </div>
+            <div class="skill-bar-wrap">
+                <div class="skill-label">Inventory Control</div>
+                <div class="skill-bar"><div class="skill-bar-fill" style="width:88%"></div></div>
+            </div>
+            <div class="skill-bar-wrap">
+                <div class="skill-label">Math / Science</div>
+                <div class="skill-bar"><div class="skill-bar-fill" style="width:85%"></div></div>
+            </div>
+            <div class="skill-bar-wrap">
+                <div class="skill-label">Problem-solving</div>
+                <div class="skill-bar"><div class="skill-bar-fill" style="width:90%"></div></div>
+            </div>
+
+            <div class="sidebar-heading">Qualities</div>
+            <p>Detail-oriented</p>
+            <p>Self-motivated</p>
+            <p>Multi-tasking</p>
+            <p>Team Leader</p>
+            <p>Adaptable</p>
+
+        </div>
+
+        <div class="main">
+            <div class="main-section">
+                <div class="main-heading">Career Objective</div>
+                <p class="objective-text">Customer-oriented, strategic-thinking sales professional with more than 8 years in the pharmacy field. Multi-tasking and self-motivated leader with experience in inventory control and projections. Exemplary research, technical and problem-solving skills. Detail-oriented and curious to embrace new concepts.</p>
+            </div>
+
+            <div class="main-section">
+                <div class="main-heading">Work Experience</div>
+
+                <div class="job-block">
+                    <div class="job-title">Customer Service Associate / Pharmacy Technician Intern</div>
+                    <div class="job-company">Walgreens</div>
+                    <div class="job-meta">June 2024 – April 2026</div>
+                    <ul class="job-bullets">
+                        <li>Provided customer service support in a fast-paced retail pharmacy environment.</li>
+                        <li>Completed internship as a pharmacy technician, assisting with prescription processing and patient care.</li>
+                    </ul>
+                </div>
+
+                <div class="job-block">
+                    <div class="job-title">Pharmaceutical Sales Representative</div>
+                    <div class="job-company">Synovie Promotion (Menarini Farmaceutica Internazionale) — Lome, Togo</div>
+                    <div class="job-meta">2016 – 2022</div>
+                    <ul class="job-bullets">
+                        <li>Prospected and promoted laboratory products across Togo.</li>
+                        <li>Obtained orders to increase the laboratory's turnover.</li>
+                        <li>Built loyalty with physicians and pharmacists.</li>
+                        <li>Identified new target markets and developed marketing and launch plans for products.</li>
+                    </ul>
+                </div>
+
+                <div class="job-block">
+                    <div class="job-title">Pharmaceutical Sales Representative</div>
+                    <div class="job-company">Repro Pharma (Therabel Lucien Pharma & Mednext Pharma) — Togo</div>
+                    <div class="job-meta">2014 – 2015</div>
+                    <ul class="job-bullets">
+                        <li>Prospected and promoted laboratory products in Togo.</li>
+                        <li>Obtained orders to increase the laboratory's turnover.</li>
+                        <li>Built loyalty with physicians and pharmacists.</li>
+                        <li>Identified new target markets and developed marketing and launch plans for products.</li>
+                    </ul>
+                </div>
+
+                <div class="job-block">
+                    <div class="job-title">Retail Pharmacy Technician</div>
+                    <div class="job-company">Pharmacie Source de Vie — Lome, Togo</div>
+                    <div class="job-meta">2011 – 2013</div>
+                    <ul class="job-bullets">
+                        <li>Assisted customers with prescription refills and inquiries.</li>
+                        <li>Managed daily pharmacy operations including stocking shelves, ordering supplies, and maintaining cleanliness standards.</li>
+                        <li>Greeted customers and provided assistance when needed.</li>
+                        <li>Served as team leader for the pharmacy staff.</li>
+                        <li>Monitored drug stock levels and coordinated orders from wholesalers.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

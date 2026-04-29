@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Kokou Ingrid Guenoukpati</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Source Sans 3', sans-serif; background: #d0d0d0; color: #222; }
+
+        .page {
+            max-width: 860px;
+            margin: 30px auto;
+            background: #fff;
+            box-shadow: 0 6px 40px rgba(0,0,0,0.15);
+        }
+
+        /* HEADER */
+        .header {
+            padding: 32px 40px 24px;
+            background: #fff;
+            border-bottom: 4px solid #c87533;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .header-left {}
+
+        .name {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1;
+        }
+
+        .name span { color: #c87533; }
+
+        .job-title {
+            font-size: 11px;
+            letter-spacing: 3.5px;
+            text-transform: uppercase;
+            color: #888;
+            margin-top: 7px;
+        }
+
+        .header-divider {
+            width: 1px;
+            height: 60px;
+            background: #e0c8ae;
+            flex-shrink: 0;
+        }
+
+        .header-right {
+            text-align: right;
+        }
+
+        .header-right p {
+            font-size: 11.5px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* BODY */
+        .body {
+            display: flex;
+            min-height: 980px;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            width: 210px;
+            flex-shrink: 0;
+            background: #faf8f5;
+            border-right: 1px solid #ecdfc9;
+            padding: 28px 20px;
+        }
+
+        .sidebar-heading {
+            font-size: 9.5px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: #c87533;
+            margin-bottom: 10px;
+            margin-top: 22px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .sidebar-heading::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: #ecdfc9;
+        }
+
+        .sidebar-heading:first-child { margin-top: 0; }
+
+        .sidebar p {
+            font-size: 11px;
+            line-height: 1.65;
+            color: #444;
+        }
+
+        .edu-school { font-weight: 700; color: #1a1a1a !important; font-size: 11.5px !important; margin-top: 10px; }
+        .edu-year {
+            display: inline-block;
+            background: #c87533;
+            color: #fff !important;
+            font-size: 9.5px !important;
+            font-weight: 700;
+            padding: 1px 7px;
+            border-radius: 2px;
+            margin-top: 2px;
+            letter-spacing: 0.5px;
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            margin-bottom: 6px;
+        }
+
+        .skill-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #c87533;
+            flex-shrink: 0;
+        }
+
+        .skill-text { font-size: 11px; color: #444; }
+
+        /* MAIN */
+        .main {
+            flex: 1;
+            padding: 28px 34px;
+        }
+
+        .main-heading {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: #1a1a1a;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .main-heading::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(to right, #c87533, transparent);
+        }
+
+        .main-section { margin-bottom: 26px; }
+
+        .objective-text { font-size: 12px; line-height: 1.75; color: #444; }
+
+        .job-block { margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #f5ede0; }
+        .job-block:last-child { border-bottom: none; margin-bottom: 0; }
+
+        .job-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 3px; }
+        .job-title { font-size: 13px; font-weight: 700; color: #1a1a1a; flex: 1; }
+        .job-date {
+            font-size: 10px;
+            color: #fff;
+            background: #c87533;
+            padding: 2px 8px;
+            border-radius: 2px;
+            white-space: nowrap;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .job-company { font-size: 11.5px; color: #888; font-style: italic; margin-bottom: 7px; }
+
+        .job-bullets { list-style: none; padding: 0; }
+        .job-bullets li {
+            font-size: 11.5px;
+            line-height: 1.55;
+            color: #444;
+            padding-left: 14px;
+            position: relative;
+            margin-bottom: 3px;
+        }
+        .job-bullets li::before {
+            content: "◆";
+            color: #c87533;
+            position: absolute;
+            left: 0;
+            font-size: 7px;
+            top: 3px;
+        }
+
+        @media print { body { background: white; } .page { margin: 0; box-shadow: none; } }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <div class="header">
+        <div class="header-left">
+            <div class="name">Kokou Ingrid <span>Guenoukpati</span></div>
+            <div class="job-title">Pharmacy Technician</div>
+        </div>
+        <div class="header-divider"></div>
+        <div class="header-right">
+            <p>kguenoukpati@gmail.com</p>
+            <p>347-234-8864</p>
+        </div>
+    </div>
+
+    <div class="body">
+        <div class="sidebar">
+
+            <div class="sidebar-heading">Education</div>
+
+            <p class="edu-school">NY Medical Career Training Center</p>
+            <p>Pharmacy Technician Class</p>
+            <p><span class="edu-year">2026</span></p>
+
+            <p class="edu-school">ISTM University</p>
+            <p>Lome, Togo</p>
+            <p>B.Sc. Marketing & Sales Management</p>
+            <p><span class="edu-year">2022</span></p>
+
+            <p class="edu-school">IAEC University</p>
+            <p>Lome, Togo</p>
+            <p>A.S. Computer Science & Telecom</p>
+            <p><span class="edu-year">2009</span></p>
+
+            <div class="sidebar-heading">Skills</div>
+
+            <div class="skill-item"><div class="skill-dot"></div><span class="skill-text">Bilingual (English / French)</span></div>
+            <div class="skill-item"><div class="skill-dot"></div><span class="skill-text">Math & Science proficiency</span></div>
+            <div class="skill-item"><div class="skill-dot"></div><span class="skill-text">Sales Strategies</span></div>
+            <div class="skill-item"><div class="skill-dot"></div><span class="skill-text">Customer Relations</span></div>
+            <div class="skill-item"><div class="skill-dot"></div><span class="skill-text">Inventory Control</span></div>
+            <div class="skill-item"><div class="skill-dot"></div><span class="skill-text">Problem-solving</span></div>
+            <div class="skill-item"><div class="skill-dot"></div><span class="skill-text">Detail-oriented</span></div>
+            <div class="skill-item"><div class="skill-dot"></div><span class="skill-text">Self-motivated</span></div>
+            <div class="skill-item"><div class="skill-dot"></div><span class="skill-text">Multi-tasking</span></div>
+
+        </div>
+
+        <div class="main">
+            <div class="main-section">
+                <div class="main-heading">Career Objective</div>
+                <p class="objective-text">Customer-oriented, strategic-thinking sales professional with more than 8 years in the pharmacy field. Multi-tasking and self-motivated leader with experience in inventory control and projections. Exemplary research, technical and problem-solving skills. Detail-oriented and curious to embrace new concepts.</p>
+            </div>
+
+            <div class="main-section">
+                <div class="main-heading">Work Experience</div>
+
+                <div class="job-block">
+                    <div class="job-header">
+                        <div class="job-title">Customer Service Associate / Pharmacy Technician Intern</div>
+                        <div class="job-date">2024 – 2026</div>
+                    </div>
+                    <div class="job-company">Walgreens</div>
+                    <ul class="job-bullets">
+                        <li>Provided customer service support in a fast-paced retail pharmacy environment.</li>
+                        <li>Completed internship as a pharmacy technician, assisting with prescription processing and patient care.</li>
+                    </ul>
+                </div>
+
+                <div class="job-block">
+                    <div class="job-header">
+                        <div class="job-title">Pharmaceutical Sales Representative</div>
+                        <div class="job-date">2016 – 2022</div>
+                    </div>
+                    <div class="job-company">Synovie Promotion (Menarini Farmaceutica Internazionale) — Lome, Togo</div>
+                    <ul class="job-bullets">
+                        <li>Prospected and promoted laboratory products across Togo.</li>
+                        <li>Obtained orders to increase the laboratory's turnover.</li>
+                        <li>Built loyalty with physicians and pharmacists.</li>
+                        <li>Identified new target markets and developed marketing and launch plans for products.</li>
+                    </ul>
+                </div>
+
+                <div class="job-block">
+                    <div class="job-header">
+                        <div class="job-title">Pharmaceutical Sales Representative</div>
+                        <div class="job-date">2014 – 2015</div>
+                    </div>
+                    <div class="job-company">Repro Pharma (Therabel Lucien Pharma & Mednext Pharma) — Togo</div>
+                    <ul class="job-bullets">
+                        <li>Prospected and promoted laboratory products in Togo.</li>
+                        <li>Obtained orders to increase the laboratory's turnover.</li>
+                        <li>Built loyalty with physicians and pharmacists.</li>
+                        <li>Identified new target markets and developed marketing and launch plans for products.</li>
+                    </ul>
+                </div>
+
+                <div class="job-block">
+                    <div class="job-header">
+                        <div class="job-title">Retail Pharmacy Technician</div>
+                        <div class="job-date">2011 – 2013</div>
+                    </div>
+                    <div class="job-company">Pharmacie Source de Vie — Lome, Togo</div>
+                    <ul class="job-bullets">
+                        <li>Assisted customers with prescription refills and inquiries.</li>
+                        <li>Managed daily pharmacy operations including stocking, ordering supplies, and maintaining cleanliness standards.</li>
+                        <li>Greeted customers and provided assistance when needed.</li>
+                        <li>Served as team leader for the pharmacy staff.</li>
+                        <li>Monitored drug stock levels and coordinated orders from wholesalers.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
